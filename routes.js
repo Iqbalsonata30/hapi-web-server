@@ -40,6 +40,12 @@ const routes = [
         path: "/hello/{name?}",
         handler:(req,res) => {
             const { name = "stranger" } = req.params
+            const { lang } = req.query
+            
+            if (lang == 'id'){
+                return `Hai,${name}!`
+            }
+
             return `Hello,${name}!`
         }
     },
