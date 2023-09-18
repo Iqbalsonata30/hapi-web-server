@@ -35,6 +35,14 @@ const routes = [
             return "Halaman tidak dapat ditemukan"        
         }     
     },
+    {
+        method:"GET",
+        path: "/hello/{name?}",
+        handler:(req,res) => {
+            const { name = "stranger" } = req.params
+            return `Hello,${name}!`
+        }
+    },
 ]
 
 module.exports= routes
